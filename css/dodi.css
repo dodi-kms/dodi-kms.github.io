@@ -23,7 +23,7 @@ nav {
   padding: 40px;
 }
 
-nav > .logo {
+.logo {
   font-size: 42px;
   margin: 0;
 }
@@ -44,7 +44,44 @@ li > ul {
 
 aside {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 section {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+article {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  overflow: hidden;
+}
+
+article > img {
+  flex: 1;
+  align-self: stretch;
+  overflow: hidden;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+section:not(.selected), article:not(.selected) {
+  display: none;
+}
+
+.mosaique {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mosaique p, .mosaique a {
+  margin: 5px;
 }

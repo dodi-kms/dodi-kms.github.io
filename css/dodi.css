@@ -15,7 +15,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, a.selected {
   text-decoration: underline;
 }
 
@@ -26,6 +26,10 @@ nav {
 .logo {
   font-size: 42px;
   margin: 0;
+}
+
+.thumbnail {
+  max-height: 150px;
 }
 
 nav ul {
@@ -48,6 +52,37 @@ aside {
   flex-direction: column;
 }
 
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow:hover {
+  background: whitesmoke;
+}
+
+.arrow:not(.visible) {
+  visibility: hidden;
+}
+
+.arrow, .arrow:active, .arrow:hover, .arrow:visited, .arrow:-webkit-any-link {
+  text-decoration: none;
+}
+
+.left.arrow, .right.arrow {
+  margin: 40px 0;
+}
+
+.up.arrow > span, .down.arrow > span {
+  transform: rotate(90deg);
+}
+
 section {
   flex: 1;
   display: flex;
@@ -60,7 +95,6 @@ article {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 40px;
   overflow: hidden;
 }
 
@@ -76,12 +110,12 @@ section:not(.selected), article:not(.selected) {
   display: none;
 }
 
-.mosaique {
+.mosaic {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.mosaique p, .mosaique a {
+.mosaic p, .mosaic a {
   margin: 5px;
 }

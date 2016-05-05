@@ -15,17 +15,23 @@ a {
   text-decoration: none;
 }
 
-a:hover, a.selected {
-  text-decoration: underline;
+a:hover {
+  opacity: 0.7;
+}
+
+a.selected {
+  font-weight: bold;
 }
 
 nav {
   padding: 40px;
+  font-size: 18px;
 }
 
 .logo {
-  font-size: 42px;
+  font-size: 50px;
   margin: 0;
+  margin-bottom: 40px;
 }
 
 .thumbnail {
@@ -73,6 +79,7 @@ aside {
 
 .arrow, .arrow:active, .arrow:hover, .arrow:visited, .arrow:-webkit-any-link {
   text-decoration: none;
+  font-style: normal;
 }
 
 .left.arrow, .right.arrow {

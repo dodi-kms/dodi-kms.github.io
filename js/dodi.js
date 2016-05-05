@@ -82,4 +82,13 @@ window.addEventListener('hashchange', function () {
   select(window.location.hash);
 });
 
+window.addEventListener('keydown', function (event) {
+  var i = event.keyCode - 37;
+  var arrow = $('.' + ['left','up','right','down'][i] + '.arrow');
+  if (!arrow || !arrow.classList.contains('visible')) {
+    return;
+  }
+  arrow.click();
+});
+
 select(window.location.hash || '#portfolio');

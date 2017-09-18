@@ -1,10 +1,17 @@
 var $ = document.querySelector.bind(document);
 var $$ = document.querySelectorAll.bind(document);
 
+// Set up <img data-href> links.
+[].map.call($$('img[data-href]'), function (element) {
+  var hash = element.dataset.href;
+  element.setAttribute('title', hash);
+  element.addEventListener('click', function (event) {
+    document.location.href = hash;
+  });
+});
+
 function select(hash) {
-
   var element = $((hash||'').split('-')[0]);
-
   if (!element) {
     return;
   }
@@ -33,7 +40,6 @@ function select(hash) {
     // Connect up/down arrows to adjacent series.
     toSection($('.up.arrow'), element.previousElementSibling);
     toSection($('.down.arrow'), element.nextElementSibling);
-
   }
 
   // Select a <section>'s <article> (particular photo).
@@ -54,9 +60,7 @@ function select(hash) {
     // Connect left/right arrows to ajacent photos.
     toArticle($('.left.arrow'), element, articles, index - 1);
     toArticle($('.right.arrow'), element, articles, index + 1);
-
   }
-
 }
 
 function toSection(arrow, section) {

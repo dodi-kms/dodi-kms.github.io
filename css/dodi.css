@@ -15,7 +15,7 @@ a {
   text-decoration: none;
 }
 
-a:hover, img[data-href]:hover {
+a:hover, *[data-href]:hover {
   cursor: pointer;
   opacity: 0.7;
 }
@@ -83,12 +83,44 @@ aside {
   font-style: normal;
 }
 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
 .left.arrow, .right.arrow {
   margin: 40px 0;
+  flex-grow: 1;
 }
 
 .up.arrow > span, .down.arrow > span {
   transform: rotate(90deg);
+}
+
+.info {
+  font-size: 14.4px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+  min-height: 40px;
+  min-width: 40px;
+  max-width: 35%;
+  padding: 10px;
+}
+
+.info-link {
+  float: right;
+  text-decoration: underline;
+}
+
+.info-text {
+  background: white;
+  padding: 20px
+}
+
+.info-link.disabled, .info-text:not(.visible) {
+  visibility: hidden;
 }
 
 section {

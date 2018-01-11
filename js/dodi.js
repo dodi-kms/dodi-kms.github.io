@@ -2,7 +2,7 @@ var $ = document.querySelector.bind(document);
 var $$ = document.querySelectorAll.bind(document);
 
 // Set up <img data-href> links.
-[].map.call($$('img[data-href]'), function (element) {
+[].map.call($$('*[data-href]'), function (element) {
   var hash = element.dataset.href;
   element.setAttribute('title', hash);
   element.addEventListener('click', function (event) {
@@ -40,11 +40,21 @@ function select(hash) {
     // Connect up/down arrows to adjacent series.
     toSection($('.up.arrow'), element.previousElementSibling);
     toSection($('.down.arrow'), element.nextElementSibling);
+
+    // Update info text-box.
+    if (element.dataset.title && element.dataset.description) {
+      $('.info-link').classList.remove('disabled');
+      $('.info-text').innerHTML = '<b>' + element.dataset.title + '</b><br>' +
+        element.dataset.description;
+    } else {
+      $('.info-link').classList.add('disabled');
+      $('.info-text').classList.remove('visible');
+    }
   }
 
   // Select a <section>'s <article> (particular photo).
   var articles = element.querySelectorAll('article');
-  var index = parseInt(hash.split('-')[1]);
+  var index = parseInt(hash.split('-')[1], 10);
   index = (index ? Math.min(index, articles.length - 1) : 0);
 
   if (!articles[index].classList.contains('selected')) {
@@ -82,6 +92,10 @@ function toArticle(arrow, section, articles, index) {
   }
 }
 
+function info() {
+  $('.info-text').classList.toggle('visible');
+}
+
 window.addEventListener('hashchange', function () {
   select(window.location.hash);
 });
@@ -95,4 +109,4 @@ window.addEventListener('keydown', function (event) {
   arrow.click();
 });
 
-select(window.location.hash || '#portfolio');
+select(window.location.hash || '#' + $('section[id]').getAttribute('id'));

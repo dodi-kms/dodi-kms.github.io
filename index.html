@@ -10,9 +10,9 @@
   <body>
 
     <nav>
-      <h1 class="logo">OK</h1>
+      <h1 class="logo"><a href="#OK">OK</a></h1>
       <ul>
-        <li><a href="#portfolio">Portfolio</a>
+        <li><span data-href="#cat">Portfolio</span>
           <ul>
             <li><a href="#cat">chatterie</a></li>
             <li><a href="#iceland">iceland</a></li>
@@ -20,24 +20,30 @@
             <li><a href="#porspoder">porspoder</a></li>
             <li><a href="#tokyo">tokyo analog</a></li>
             <li><a href="#visiteurs">visiteurs</a></li>
+          </ul>
+        </li>
+        <li><span data-href="#rmn">Commandes</span>
+          <ul>
             <li><a href="#rmn">tourisme93 / plâtre, encre et papier</a></li>
             <li><a href="#tapisrouge">académie des césar / tapis rouge</a></li>
           </ul>
         </li>
-        <li><a href="#about">About me</a></li>
+        <li><a href="#about">&Agrave; propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <a class="left arrow"><span>〈</span></a>
+    <div class="sidebar">
+      <a class="left arrow"><span>〈</span></a>
+    </div>
 
     <aside>
 
       <a class="up arrow"><span>〈</span></a>
 
-      <!-- PORTFOLIO / MOSAIQUE -->
+      <!-- ACCUEIL / DERNIERE PHOTO -->
 
-      <section id="portfolio">
+      <section id="OK">
 
         <article>
           <img data-href="#iceland" src="img/iceland/DSC_4645.jpg">
@@ -45,9 +51,9 @@
 
       </section>
 
-<!-- CAT -->
+      <!-- CAT -->
 
-      <section id="cat">
+      <section id="cat" data-title="Chat" data-description="Des chats.">
 
         <article>
           <img src="img/cat/1.jpg">
@@ -99,9 +105,9 @@
 
       </section>
       
-<!-- ICELAND -->
+      <!-- ICELAND -->
 
-      <section id="iceland">
+      <section id="iceland" data-title="" data-description="">
 
         <article>
           <img src="img/iceland/DSC_4235.jpg">
@@ -295,7 +301,7 @@
 
       <!-- MUTATION -->
 
-      <section id="mutation">
+      <section id="mutation" data-title="" data-description="">
 
         <article>
           <img src="img/mutation/DSC4755.jpg">
@@ -325,7 +331,7 @@
 
       <!-- PORSPODER -->
 
-      <section id="porspoder">
+      <section id="porspoder" data-title="" data-description="">
 
         <article>
           <img src="img/bretagne/01DSC_0300.jpg">
@@ -345,9 +351,9 @@
 
       </section>
 
- <!-- TOKYO ANALOG -->
+      <!-- TOKYO ANALOG -->
 
-      <section id="tokyo">
+      <section id="tokyo" data-title="" data-description="">
 
         <article>
           <img src="img/tokyo/A11.jpg">
@@ -505,7 +511,7 @@
 
       <!-- VISITEURS -->
 
-      <section id="visiteurs">
+      <section id="visiteurs" data-title="" data-description="">
 
         <article>
           <img src="img/musee/DSC_2289.jpg">
@@ -543,7 +549,7 @@
 
       <!-- RMN -->
 
-      <section id="rmn">
+      <section id="rmn" data-title="" data-description="">
 
         <article>
           <img src="img/rmn/01.jpg">
@@ -690,7 +696,7 @@
 
       <!-- TAPIS ROUGE -->
 
-      <section id="tapisrouge">
+      <section id="tapisrouge" data-title="" data-description="">
 
         <article>
           <img src="img/cesar/2.jpg">
@@ -769,7 +775,7 @@
           <h1>Odile Keromnes</h1>
           <pre>Après des études d'histoire de l'art puis un Master Photographie à l'Ecole Nationale Supérieure Louis-Lumière,
           mon travail s'articule autour de l'intersection entre la photographie et ce qui relève du muséal.</pre>
-          <p><a href="https://www.linkedin.com/in/odile-keromnes-109328a1/">pour + d'informations</a></p>
+          <p><u><a href="https://www.linkedin.com/in/odile-keromnes-109328a1/">pour + d'informations</a></u></p>
         </article>
 
       </section>
@@ -788,7 +794,13 @@
 
     </aside>
 
-    <a class="right arrow"><span>〉</span></a>
+    <div class="sidebar">
+      <a class="right arrow"><span>〉</span></a>
+      <div class="info">
+        <div class="info-text"></div>
+        <a class="info-link" href="javascript:info()">info</a>
+      </div>
+    </div>
 
     <script src="js/dodi.js"></script>
 

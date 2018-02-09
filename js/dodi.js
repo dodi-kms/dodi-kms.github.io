@@ -44,7 +44,7 @@ function select(hash) {
     // Update info text-box.
     if (element.dataset.title && element.dataset.description) {
       $('.info-link').classList.remove('disabled');
-      $('.info-text').innerHTML = '<b>' + element.dataset.title + '</b><br>' +
+      $('.info-text').innerHTML = '<b>' + element.dataset.title + '</b><br><br>' +
         element.dataset.description;
     } else {
       $('.info-link').classList.add('disabled');

@@ -24,6 +24,11 @@ a.selected {
   font-weight: bold;
 }
 
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 nav {
   padding: 40px;
   font-size: 18px;
@@ -134,6 +139,7 @@ article {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   overflow: hidden;
